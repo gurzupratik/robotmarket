@@ -5,6 +5,7 @@ import { loadRobots } from "../features/robots/RobotsReducer";
 import { useDispatch } from "react-redux";
 import RobotsSection from "../components/blocks/RobotsSection";
 import CartBlock from "../components/blocks/CartBlock";
+import HeaderTop from "../components/layouts/HeaderTop";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -18,12 +19,13 @@ export default function Home() {
 
   return (
     <div className="mainWrapper">
+      <HeaderTop></HeaderTop>
       <div className="page-left">
-        <CartBlock></CartBlock>
         <div className="container">
           <RobotsSection></RobotsSection>
         </div>
       </div>
+      <CartBlock></CartBlock>
     </div>
   );
 }

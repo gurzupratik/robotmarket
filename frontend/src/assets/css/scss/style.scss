@@ -1,72 +1,36 @@
 @import "./partials/variables";
 @import "./mixins/mixins";
 @import "./partials/base";
-
-$white: #ffffff;
-$black: #333333;
-$grey: #777777;
-$blue: #4fa8dd;
-
-$primary-color: $blue;
+@import "./partials/buttons";
+@import "./partials/header";
+@import "./partials/card";
+@import "./partials/cart";
 
 .page {
   &-left {
-    margin-right: 350px;
+    @media screen and (min-width: 992px) {
+      margin-right: 350px;
+    }
+    transition: all 0.3s ease-in-out;
+    background: $light-grey;
   }
   &-right {
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
     position: fixed;
-    right: 0;
     top: 0;
     bottom: 0;
+    background-color: $white;
     border: 1px solid transparentize($color: $grey, $amount: 0.8);
+    border-top: 0;
     width: 350px;
-    padding: 0 10px 20px;
-  }
-}
-
-// robot card
-.card {
-  &-body {
-    background-color: $grey;
-  }
-  &-title {
-    font-size: 1.3rem;
-    line-height: 1.2;
-    color: $white;
-  }
-  &-mid {
-    background-color: $black;
-    color: $white;
-  }
-  figure {
-    position: relative;
-    text-align: right;
-    margin-bottom: 0;
-    span {
-      position: absolute;
-      left: 1rem;
+    padding: 0 10px 0;
+    z-index: 4;
+    right: -350px;
+    @media screen and (min-width: 992px) {
+      right: 0;
     }
-  }
-  b {
-    &.material {
-      top: 1rem;
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
-      background-color: $blue;
-      color: $white;
-      padding: 2px 10px;
-      border-radius: 3px;
-    }
-    &.price {
-      bottom: 1rem;
-    }
-  }
-  .date {
-    color: $white;
-  }
-  .btn {
-    width: 100%;
   }
 }
 
@@ -96,69 +60,24 @@ select {
   }
 }
 
-// cart
-.cart {
-  &-header {
-    text-align: center;
-    background-color: $blue;
-    color: $white;
-    padding-bottom: 3px;
-    margin-bottom: 1rem;
-    margin-left: -10px;
-    margin-right: -10px;
-    &-title {
-      font-size: 1.5rem;
-      margin-bottom: 0;
-      font-weight: 500;
+// sidebar-states
+.sidebar-open {
+  .page {
+    &-left {
+      @media screen and (min-width: 767px) {
+        margin-right: 350px;
+      }
+    }
+    &-right {
+      right: 0;
+      @media screen and (max-width: 767px) {
+        top: 46px;
+      }
     }
   }
-  &-left {
-    width: 80px;
-    margin-right: 1rem;
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-  &-name {
-    font-weight: 500;
-  }
-  &-control {
-    display: flex;
-    button {
-      background-color: transparent;
-      border: 1px solid $grey;
-      border-radius: 3px;
-      width: 3 0px;
-    }
-  }
-  &-times {
-    margin: 0 10px;
-  }
-  &-item {
-    padding: 10px 0;
-    border-bottom: 1px solid transparentize($color: $grey, $amount: 0.8);
-    align-items: center;
-    &:last-child {
-      border-bottom: 0px solid red;
-    }
-  }
-  &-right {
-    flex-grow: 1;
-  }
-}
-.final {
-  background-color: darken($color: $blue, $amount: 20);
-  color: $white;
-  padding: 1rem;
-  margin-left: -10px;
-  margin-right: -10px;
-  b {
-    margin-right: 10px;
-  }
-  span {
-    b {
-      margin-right: 3px;
+  .header {
+    @media screen and (min-width: 767px) {
+      margin-right: 350px;
     }
   }
 }

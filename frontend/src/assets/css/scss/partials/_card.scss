@@ -1,0 +1,100 @@
+// robot card
+.card {
+  border: none;
+  height: 100%;
+  &-body {
+    background-color: $primary-color;
+    transition: all 0.3s ease-in-out;
+  }
+  &-title {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    color: $white;
+  }
+  &-mid {
+    background-color: lighten($color: $primary-color, $amount: 10);
+    color: $white;
+    transition: all 0.3s ease-in-out;
+  }
+  &-actions {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: transparentize($color: $black, $amount: 0.19);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    .card-actions {
+      opacity: 1;
+    }
+  }
+  // cart subscribtion states
+  &.added-to-cart {
+    @include themeShadow;
+    .card-mid {
+      background-color: lighten($color: $green, $amount: 10);
+    }
+    .card-body,
+    .material {
+      background-color: $green;
+    }
+  }
+  &.out-stocked {
+    .card-mid {
+      background-color: lighten($color: $yellow, $amount: 10);
+    }
+    .card-body,
+    .material {
+      background-color: $yellow;
+    }
+    .card-actions,
+    .btn {
+      color: $yellow;
+      cursor: not-allowed;
+    }
+  }
+  figure {
+    position: relative;
+    text-align: right;
+    margin-bottom: 0;
+    span {
+      position: absolute;
+      left: 1rem;
+    }
+  }
+  b {
+    &.material {
+      top: 1rem;
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      background-color: $blue;
+      color: $white;
+      padding: 2px 10px;
+      border-radius: 3px;
+      transition: all 0.3s ease-in-out;
+    }
+    &.price {
+      bottom: 1rem;
+    }
+  }
+  .date {
+    color: $white;
+  }
+  .btn {
+    width: 100%;
+    color: $white;
+  }
+}
+
+.addedStatus {
+  left: unset;
+  right: 10px;
+  top: 10px;
+}

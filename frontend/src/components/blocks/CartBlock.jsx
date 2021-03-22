@@ -24,7 +24,7 @@ export default function CartBlock() {
     <div className="page-right">
       <div className="cart-header">
         <p className="cart-header-title">Shopping Bag</p>
-        {totalRobots > 0 ? <p>({totalRobots} items)</p> : ""}
+        {totalRobots > 0 ? <p>( {totalRobots} &nbsp;items )</p> : ""}
       </div>
       <CartBox></CartBox>
       {totalRobots > 0 ? (
