@@ -1,0 +1,74 @@
+// cart
+.cart {
+  &-header {
+    text-align: center;
+    color: $white;
+    padding-bottom: 3px;
+    margin-bottom: 1rem;
+    margin-left: -10px;
+    margin-right: -10px;
+    &-title {
+      background-color: $blue;
+      font-size: 1.5rem;
+      margin-bottom: 0;
+      font-weight: 500;
+      height: 56px;
+      line-height: 56px;
+    }
+    p {
+      &:nth-child(2) {
+        background: $grey;
+        padding: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-left {
+    width: 80px;
+    margin-right: 1rem;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  &-name {
+    font-weight: 500;
+  }
+  &-control {
+    display: flex;
+    button {
+      background-color: transparent;
+      border: 1px solid $grey;
+      border-radius: 3px;
+      width: 3 0px;
+    }
+  }
+  &-times {
+    margin: 0 10px;
+  }
+  &-item {
+    padding: 10px 0;
+    border-bottom: 1px solid transparentize($color: $grey, $amount: 0.8);
+    align-items: center;
+    &:last-child {
+      border-bottom: 0px solid red;
+    }
+  }
+  &-right {
+    flex-grow: 1;
+  }
+}
+.final {
+  background-color: darken($color: $blue, $amount: 20);
+  color: $white;
+  padding: 1rem;
+  margin: auto -10px 0;
+  b {
+    margin-right: 10px;
+  }
+  span {
+    b {
+      margin-right: 3px;
+    }
+  }
+}
